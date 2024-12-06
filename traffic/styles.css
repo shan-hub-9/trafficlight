@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+  }
+  
+  .sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sun {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 40px rgba(255, 255, 0, 0.7);
+    animation: pulse 2s infinite alternate;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .ray {
+    position: absolute;
+    
+    background-color: yellow;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    animation: rays 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background-color: red;
+      box-shadow: 0 0 100px rgba(238, 11, 11, 0.7);
+    }
+    100% {
+      transform: scale(1.1);
+      background-color: orange;
+      box-shadow: 0 0 40px rgba(247, 170, 2, 0.9);
+    }
+    50%{
+      transform: scale(1.1);
+      background-color: green;
+      box-shadow:  0 0 40px rgb(3, 144, 50);
+    }
+  }
+  
+  @keyframes rays {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+ 
+  .sun:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 0px rgb(231, 32, 6); 
+    background-color: orange; 
+  }
+  .sun:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 0px rgb(3, 144, 50); 
+    background-color: green; 
+  }
+  
